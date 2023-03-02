@@ -1,18 +1,20 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.student;
+package mindera.mindswap.aveiro.module2.springboot.studentsapi.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+@Entity(name = "student")
 @Table
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
+    @Column(name="email", unique = true)
     private String email;
+    @Column(name="name")
     private String name;
+    @Column(name="date_of_birth")
     private LocalDate dateOfBirth;
 
     public Student(Long id, String name, String email, LocalDate dateOfBirth) {

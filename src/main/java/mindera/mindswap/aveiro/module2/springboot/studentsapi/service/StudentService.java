@@ -1,5 +1,7 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.student;
+package mindera.mindswap.aveiro.module2.springboot.studentsapi.service;
 
+import mindera.mindswap.aveiro.module2.springboot.studentsapi.entity.Student;
+import mindera.mindswap.aveiro.module2.springboot.studentsapi.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

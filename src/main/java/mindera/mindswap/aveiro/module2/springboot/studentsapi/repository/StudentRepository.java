@@ -1,5 +1,6 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.student;
+package mindera.mindswap.aveiro.module2.springboot.studentsapi.repository;
 
+import mindera.mindswap.aveiro.module2.springboot.studentsapi.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
