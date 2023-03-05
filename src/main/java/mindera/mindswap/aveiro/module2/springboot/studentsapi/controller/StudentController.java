@@ -10,33 +10,34 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "api/v1/student")
 public class StudentController {
-
-    private final StudentService studentService;
-
     @Autowired
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
-    }
+    StudentService studentService;
 
     @GetMapping
-    public List<Student> hello() {
-        return this.studentService.getStudent();
+    public List<Student> getStudent() {
+        return this.studentService.getStudents();
+    }
+
+    @GetMapping(path = "{StudentID}")
+    public Student getStudents(@PathVariable("StudentID") Long id) {
+        return this.studentService.getStudent(id);
     }
 
     @PostMapping
-    public void addNewStudent(@RequestBody Student student) {
-        this.studentService.addNewStudent(student);
+    public Long addNewStudent(@RequestBody Student student) {
+        this.studentService.saveOrUpdateStudent(student);
+        return student.getId();
     }
 
-    // http://localhost:8080/api/v1/student/2
     @DeleteMapping(path = "{StudentID}")
     public void deleteStudent(@PathVariable("StudentID") Long id) {
         this.studentService.deleteStudent(id);
     }
 
-
-    @PutMapping(path = "{studentID}")
-    public void updateStudent(@PathVariable("studentID") Long id, @RequestBody Student student) {
-        studentService.updateStudent(id, student);
+    @PutMapping(path = "{StudentID}")
+    public Student updateStudent(@PathVariable("StudentID") Long id, @RequestBody Student student) {
+        student.setId(id);
+        studentService.saveOrUpdateStudent(student);
+        return student;
     }
 }

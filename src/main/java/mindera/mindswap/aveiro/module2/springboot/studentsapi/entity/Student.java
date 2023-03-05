@@ -3,10 +3,9 @@ package mindera.mindswap.aveiro.module2.springboot.studentsapi.entity;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity(name = "student")
+@Entity(name = "students")
 @Table
 public class Student {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,22 +16,6 @@ public class Student {
     @Column(name="date_of_birth")
     private LocalDate dateOfBirth;
 
-    public Student(Long id, String name, String email, LocalDate dateOfBirth) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-    }
-
-
-    public Student(String name, String email, LocalDate dateOfBirth) {
-        this.name = name;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public Student() {
-    }
 
     public Long getId() {
         return id;
