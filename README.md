@@ -45,6 +45,8 @@ The API has the following endpoints:
 - PUT /students/{id}: updates a student with the given id
 - DELETE /students/{id}: deletes a student with the given id
 
+- GET /calculator/{num1}/{num2}: returns the sum of the num1 and num2
+
 ## Contributing
 
 If you wish to contribute to this project, feel free to create a pull request.
