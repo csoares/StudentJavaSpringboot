@@ -9,8 +9,16 @@ import org.springframework.web.bind.annotation.*;
 public class CalculatorController {
     @Autowired
     CalculatorService calculatorService;
+
+
     @GetMapping(path = "add/{num1}/{num2}")
     public int add(@PathVariable("num1") int num1, @PathVariable("num2") int num2){
         return calculatorService.addTwoNumbers(num1, num2);
     }
+
+    @GetMapping(path ="subtract/{num1}/{num2}")
+    public int subtract(@PathVariable("num1") int num1, @PathVariable("num2") int num2){
+        return calculatorService.subtractNumbers(num1,num2);
+    }
+
 }
