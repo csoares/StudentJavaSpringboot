@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5ea1b3ab-a958-489c-82d6-b65a6dbd0633",
+		"_postman_id": "e2bd5cee-9418-4011-a47b-252986aa6ab4",
 		"name": "MindswapStudent",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1591800"
@@ -212,6 +212,29 @@
 					"response": []
 				},
 				{
+					"name": "Division two numbers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/calculator/div/10/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"calculator",
+								"div",
+								"10",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Subtract two numbers",
 					"request": {
 						"method": "GET",
@@ -250,6 +273,24 @@
 								"localhost"
 							],
 							"port": "8080"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/exception",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"exception"
+							]
 						}
 					},
 					"response": []
