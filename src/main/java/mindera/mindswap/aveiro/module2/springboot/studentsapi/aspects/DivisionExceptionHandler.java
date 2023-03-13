@@ -13,7 +13,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 @Component
 @ControllerAdvice
 public class DivisionExceptionHandler {
-    private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
+    private static final Logger logger = LoggerFactory.getLogger(DivisionExceptionHandler.class);
 
     @ExceptionHandler(value = {MethodArgumentTypeMismatchException.class, NumberFormatException.class, ArithmeticException.class, BadDenominatorDivision.class})
     public ResponseEntity<String> handleDivisionByZero(Exception ex) {
