@@ -1,6 +1,6 @@
 package mindera.mindswap.aveiro.module2.springboot.studentsapi.controller;
 
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.entity.Student;
+import mindera.mindswap.aveiro.module2.springboot.studentsapi.dto.StudentDto;
 import mindera.mindswap.aveiro.module2.springboot.studentsapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,19 +14,18 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping
-    public List<Student> getStudent() {
+    public List<StudentDto> getStudent() {
         return this.studentService.getStudents();
     }
 
     @GetMapping(path = "{StudentID}")
-    public Student getStudents(@PathVariable("StudentID") Long id) {
+    public StudentDto getStudents(@PathVariable("StudentID") Long id) {
         return this.studentService.getStudent(id);
     }
 
     @PostMapping
-    public Long addNewStudent(@RequestBody Student student) {
-        this.studentService.saveOrUpdateStudent(student);
-        return student.getId();
+    public Long addNewStudent(@RequestBody StudentDto studentDto) {
+        return this.studentService.saveStudent(studentDto);
     }
 
     @DeleteMapping(path = "{StudentID}")
@@ -35,9 +34,8 @@ public class StudentController {
     }
 
     @PutMapping(path = "{StudentID}")
-    public Student updateStudent(@PathVariable("StudentID") Long id, @RequestBody Student student) {
-        student.setId(id);
-        studentService.saveOrUpdateStudent(student);
-        return student;
+    public StudentDto updateStudent(@PathVariable("StudentID") Long id, @RequestBody StudentDto studentDto) {
+        studentService.updateStudent(studentDto, id);
+        return studentDto;
     }
 }

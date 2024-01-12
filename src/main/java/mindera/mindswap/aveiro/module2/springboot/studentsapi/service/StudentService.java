@@ -1,6 +1,8 @@
 package mindera.mindswap.aveiro.module2.springboot.studentsapi.service;
 
+import mindera.mindswap.aveiro.module2.springboot.studentsapi.dto.StudentDto;
 import mindera.mindswap.aveiro.module2.springboot.studentsapi.entity.Student;
+import mindera.mindswap.aveiro.module2.springboot.studentsapi.mapper.StudentMapper;
 import mindera.mindswap.aveiro.module2.springboot.studentsapi.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,21 +17,31 @@ public class StudentService {
     StudentRepository studentRepository;
 
 
-    public List<Student> getStudents() {
+    public List<StudentDto> getStudents() {
         List<Student> students = new ArrayList<>();
         this.studentRepository.findAll().forEach(students::add);
-        return students;
+        return StudentMapper.INSTANCE.studentsToStudentDtos(students);
     }
 
-    public void saveOrUpdateStudent(Student student) {
+    public StudentDto getStudent(Long id) {
+        return StudentMapper.INSTANCE.studentToStudentDto(this.studentRepository.findById(id).orElseThrow(() -> new IllegalStateException("id do not exists!")));
+    }
+
+    public Long saveStudent(StudentDto studentDto) {
+        Student student = StudentMapper.INSTANCE.studentDtoToStudent(studentDto);
         this.studentRepository.save(student);
+        return student.getId();
+    }
+
+
+    public Long updateStudent(StudentDto studentDto, Long id) {
+        Student student = StudentMapper.INSTANCE.studentDtoToStudent(studentDto);
+        student.setId(id);
+        return this.studentRepository.save(student).getId();
     }
 
     public void deleteStudent(Long id) {
         this.studentRepository.deleteById(id);
     }
 
-    public Student getStudent(Long id) {
-        return this.studentRepository.findById(id).orElseThrow(() -> new IllegalStateException("id do not exists!"));
-    }
 }

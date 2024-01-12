@@ -27,6 +27,16 @@ or
 java -jar target/StudentsAPI-0.0.1-SNAPSHOT.jar
 ```
 
+## Run an instance of Postgres Database using Docker
+
+- Install Docker
+- Run the following command:
+
+ ```
+ docker run --name postgres -e POSTGRES_DB=students -e POSTGRES_PASSWORD=postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+ ```
+
+
 ## Usage
 
 Once the application is up and running, you can access the API at the following URL:
