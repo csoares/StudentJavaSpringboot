@@ -1,7 +1,7 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.mapper;
+package mindera.springboot.studentsapi.mapper;
 
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.dto.StudentDto;
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.entity.Student;
+import mindera.springboot.studentsapi.dto.StudentDto;
+import mindera.springboot.studentsapi.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

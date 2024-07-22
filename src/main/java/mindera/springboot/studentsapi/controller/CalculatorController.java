@@ -1,8 +1,11 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.controller;
+package mindera.springboot.studentsapi.controller;
 
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.service.CalculatorService;
+import mindera.springboot.studentsapi.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "api/v1/calculator")

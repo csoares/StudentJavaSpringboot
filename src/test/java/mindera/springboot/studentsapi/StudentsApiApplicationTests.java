@@ -1,4 +1,4 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi;
+package mindera.springboot.studentsapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.dto;
+package mindera.springboot.studentsapi.dto;
 
 import lombok.Getter;
 import lombok.Setter;

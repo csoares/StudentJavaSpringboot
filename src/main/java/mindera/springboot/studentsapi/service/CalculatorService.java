@@ -1,4 +1,4 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.service;
+package mindera.springboot.studentsapi.service;
 
 import org.springframework.stereotype.Service;
 

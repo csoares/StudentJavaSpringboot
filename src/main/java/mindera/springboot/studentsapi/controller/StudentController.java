@@ -1,7 +1,7 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.controller;
+package mindera.springboot.studentsapi.controller;
 
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.dto.StudentDto;
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.service.StudentService;
+import mindera.springboot.studentsapi.dto.StudentDto;
+import mindera.springboot.studentsapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
