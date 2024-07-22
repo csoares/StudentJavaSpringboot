@@ -1,4 +1,4 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.aspects;
+package mindera.springboot.studentsapi.aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

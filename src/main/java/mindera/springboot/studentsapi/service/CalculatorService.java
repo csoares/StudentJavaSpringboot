@@ -1,6 +1,6 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.service;
+package mindera.springboot.studentsapi.service;
 
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.exceptions.BadDenominatorDivision;
+import mindera.springboot.studentsapi.exceptions.BadDenominatorDivision;
 import org.springframework.stereotype.Service;
 
 @Service

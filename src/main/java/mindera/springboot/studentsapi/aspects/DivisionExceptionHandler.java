@@ -1,6 +1,6 @@
-package mindera.mindswap.aveiro.module2.springboot.studentsapi.aspects;
+package mindera.springboot.studentsapi.aspects;
 
-import mindera.mindswap.aveiro.module2.springboot.studentsapi.exceptions.BadDenominatorDivision;
+import mindera.springboot.studentsapi.exceptions.BadDenominatorDivision;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
