@@ -9,9 +9,9 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="email", unique = true)
+    @Column(unique = true)
     private String email;
-    @Column(name="name")
+    @Column
     private String name;
     @Column(name="date_of_birth")
     private LocalDate dateOfBirth;

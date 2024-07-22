@@ -14,12 +14,12 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping
-    public List<Student> getStudent() {
+    public List<Student> getStudents() {
         return this.studentService.getStudents();
     }
 
     @GetMapping(path = "{StudentID}")
-    public Student getStudents(@PathVariable("StudentID") Long id) {
+    public Student getStudent(@PathVariable("StudentID") Long id) {
         return this.studentService.getStudent(id);
     }
 

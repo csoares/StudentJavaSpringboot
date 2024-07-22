@@ -13,4 +13,8 @@ public class CalculatorService {
     public int subtractNumbers(int num1, int num2) {
         return num1-num2;
     }
+
+    public int multiplyNumbers(int a, int num2) {
+        return a * num2;
+    }
 }
