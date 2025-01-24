@@ -4,8 +4,12 @@ import mindera.springboot.studentsapi.dto.StudentDto;
 import mindera.springboot.studentsapi.dto.StudentUpdateDto;
 import mindera.springboot.studentsapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -35,7 +39,12 @@ public class StudentController {
     }
 
     @PutMapping(path = "{StudentID}")
-    public void updateStudent(@PathVariable("StudentID") Long id, @RequestBody StudentUpdateDto studentUpdateDtoDto) {
+    public ResponseEntity<Object> updateStudent(@PathVariable("StudentID") Long id, @Valid @RequestBody StudentUpdateDto studentUpdateDtoDto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
         studentService.updateStudent(studentUpdateDtoDto, id);
+        return null;
     }
 }

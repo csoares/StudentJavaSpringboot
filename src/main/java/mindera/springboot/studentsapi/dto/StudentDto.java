@@ -8,6 +8,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class StudentDto {
-    private String name;
+
     private LocalDate dateOfBirth;
+    private String name;
+    private String email;
 }
