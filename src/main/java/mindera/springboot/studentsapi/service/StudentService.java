@@ -1,6 +1,7 @@
 package mindera.springboot.studentsapi.service;
 
 import mindera.springboot.studentsapi.dto.StudentDto;
+import mindera.springboot.studentsapi.dto.StudentUpdateDto;
 import mindera.springboot.studentsapi.entity.Student;
 import mindera.springboot.studentsapi.mapper.StudentMapper;
 import mindera.springboot.studentsapi.repository.StudentRepository;
@@ -34,8 +35,8 @@ public class StudentService {
     }
 
 
-    public Long updateStudent(StudentDto studentDto, Long id) {
-        Student student = StudentMapper.INSTANCE.studentDtoToStudent(studentDto);
+    public Long updateStudent(StudentUpdateDto studentDto, Long id) {
+        Student student = StudentMapper.INSTANCE.studentUpdateDtoToStudent(studentDto);
         student.setId(id);
         return this.studentRepository.save(student).getId();
     }
