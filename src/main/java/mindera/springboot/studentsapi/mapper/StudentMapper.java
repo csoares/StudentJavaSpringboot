@@ -1,6 +1,7 @@
 package mindera.springboot.studentsapi.mapper;
 
 import mindera.springboot.studentsapi.dto.StudentDto;
+import mindera.springboot.studentsapi.dto.StudentUpdateDto;
 import mindera.springboot.studentsapi.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -13,6 +14,8 @@ public interface StudentMapper {
     StudentMapper INSTANCE = Mappers.getMapper(StudentMapper.class);
 
     Student studentDtoToStudent(StudentDto studentDto);
+
+    Student studentUpdateDtoToStudent(StudentUpdateDto studentUpdateDto);
 
     StudentDto studentToStudentDto(Student student);
 

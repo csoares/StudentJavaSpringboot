@@ -1,6 +1,7 @@
 package mindera.springboot.studentsapi.controller;
 
 import mindera.springboot.studentsapi.dto.StudentDto;
+import mindera.springboot.studentsapi.dto.StudentUpdateDto;
 import mindera.springboot.studentsapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,8 +35,7 @@ public class StudentController {
     }
 
     @PutMapping(path = "{StudentID}")
-    public StudentDto updateStudent(@PathVariable("StudentID") Long id, @RequestBody StudentDto studentDto) {
-        studentService.updateStudent(studentDto, id);
-        return studentDto;
+    public void updateStudent(@PathVariable("StudentID") Long id, @RequestBody StudentUpdateDto studentUpdateDtoDto) {
+        studentService.updateStudent(studentUpdateDtoDto, id);
     }
 }
