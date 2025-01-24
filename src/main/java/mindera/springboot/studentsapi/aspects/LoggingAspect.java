@@ -12,25 +12,25 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Before("execution(* mindera.mindswap.aveiro.module2.springboot.studentsapi.controller.HelloController.hello())")
+    @Before("execution(* mindera.springboot.studentsapi.controller.HelloController.hello())")
     public void logBeforeHello(JoinPoint joinPoint) {
         logger.info("Before " + joinPoint.getSignature().getName() + " method call");
     }
 
-    @AfterReturning(pointcut = "execution(* mindera.mindswap.aveiro.module2.springboot.studentsapi.controller.HelloController.helloList())", returning = "result")
+    @AfterReturning(pointcut = "execution(* mindera.springboot.studentsapi.controller.HelloController.helloList())", returning = "result")
     public void logAfterHelloList(JoinPoint joinPoint, Object result) {
         logger.info("After " + joinPoint.getSignature().getName() + " method call");
         logger.info("Response: " + result);
     }
 
-    @AfterThrowing(pointcut = "execution(* mindera.mindswap.aveiro.module2.springboot.studentsapi.controller.DefaultController.*(..))", throwing = "exception")
+    @AfterThrowing(pointcut = "execution(* mindera.springboot.studentsapi.controller.DefaultController.*(..))", throwing = "exception")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable exception) {
         logger.error("Exception in " + joinPoint.getSignature().getName() + " method call");
         logger.error("Exception: " + exception);
     }
 
 
-    @Around("execution(* mindera.mindswap.aveiro.module2.springboot.studentsapi.controller.CalculatorController.add(int, int))")
+    @Around("execution(* mindera.springboot.studentsapi.controller.CalculatorController.add(int, int))")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         logger.info("Before " + joinPoint.getSignature().getName() + " method call");
